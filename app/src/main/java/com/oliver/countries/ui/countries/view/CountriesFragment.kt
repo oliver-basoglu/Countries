@@ -41,13 +41,13 @@ class CountriesFragment : Fragment(R.layout.fragment_countries) {
         countriesViewModel.countriesResponseResultLiveData.observe(
             viewLifecycleOwner
         ) { countriesResponseResult ->
-            countriesResponseResult?.let { it ->
-                when (it) {
+            countriesResponseResult?.let { result ->
+                when (result) {
                     is CountriesResponseResult.Success -> {
-                        buildCountryRecycler(it.countries)
+                        buildCountryRecycler(result.countries)
                     }
                     is CountriesResponseResult.Failure -> {
-                        Timber.d(it.error.localizedMessage)
+                        Timber.d(result.error.localizedMessage)
                         Toast.makeText(
                             context,
                             getString(R.string.api_loading_failed),

@@ -6,8 +6,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.oliver.countries.data.model.Country
 import com.oliver.countries.databinding.CountryListItemBinding
 
-class CountriesAdapter(var countryList: List<Country>) :
-    RecyclerView.Adapter<CountriesAdapter.CountryViewHolder>() {
+class CountriesAdapter(var countryList: List<Country>) : RecyclerView.Adapter<CountriesAdapter.CountryViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CountryViewHolder {
         return CountryViewHolder(
