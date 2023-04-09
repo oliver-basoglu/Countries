@@ -37,6 +37,7 @@ class CountriesFragment : Fragment(R.layout.fragment_countries) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        // Observe the changes.
         countriesViewModel.countriesResponseResultLiveData.observe(
             viewLifecycleOwner
         ) { countriesResponseResult ->
@@ -50,7 +51,7 @@ class CountriesFragment : Fragment(R.layout.fragment_countries) {
                         Toast.makeText(
                             context,
                             getString(R.string.api_loading_failed),
-                            Toast.LENGTH_SHORT
+                            LENGTH_SHORT
                         ).show()
                     }
                     is CountriesResponseResult.IsLoading -> {
