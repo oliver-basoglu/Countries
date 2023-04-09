@@ -10,7 +10,6 @@ class CountryApplication : Application() {
 
     override fun onCreate() {
         super.onCreate()
-        //Initialize Timber logger
         if (BuildConfig.DEBUG) {
             Timber.plant(Timber.DebugTree())
         }
